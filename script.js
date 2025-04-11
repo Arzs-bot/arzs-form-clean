@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function sendForm(data) {
       console.log("🟢 正在發送 POST 資料至 Apps Script：", data);
-      fetch("https://script.google.com/macros/s/AKfycbx-xxxx/exec", {
+      fetch("https://script.google.com/macros/s/AKfycbx-7cBRkusyT0y0X4fpZ2QxJCFAcdTjxZZf5XODmPYxQdHXIN6JtsrW5hDjlA81UD6YzQ/exec", {
         method: "POST",
         mode: "no-cors",
         headers: {
