@@ -1,5 +1,5 @@
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function () {// 更新測試 v1.2
   const form = document.getElementById("arzsContactForm");
   const successMsg = document.getElementById("successMsg");
 
