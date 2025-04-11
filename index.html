@@ -1,10 +1,28 @@
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8">
   <title>ARZS 聯絡表單</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <h2>表單上線測試中</h2>
+  <div class="form-wrapper">
+    <h2>聯絡我們</h2>
+    <form id="arzsContactForm">
+      <label>姓名 *</label>
+      <input type="text" name="name" required>
+
+      <label>電子郵件 *</label>
+      <input type="email" name="email" required>
+
+      <label>圖稿上傳（可選）</label>
+      <input type="file" id="uploadFile" accept="image/*,application/pdf">
+
+      <button type="submit">送出表單</button>
+      <div class="success-msg" id="successMsg">✅ 表單已成功送出，感謝您的填寫！</div>
+    </form>
+  </div>
 </body>
 </html>
