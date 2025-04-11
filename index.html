@@ -14,8 +14,43 @@
       <label>姓名 *</label>
       <input type="text" name="name" required>
 
+      <label>公司名稱（個人免填）</label>
+      <input type="text" name="company">
+
       <label>電子郵件 *</label>
       <input type="email" name="email" required>
+
+      <label>聯絡電話</label>
+      <input type="text" name="phone">
+
+      <label>LINE ID</label>
+      <input type="text" name="lineid">
+
+      <label>希望的聯絡方式（可複選）</label>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="contact_method" value="Email"> Email</label>
+        <label><input type="checkbox" name="contact_method" value="電話"> 電話</label>
+        <label><input type="checkbox" name="contact_method" value="LINE"> LINE</label>
+      </div>
+
+      <label>製作品項</label>
+      <input type="text" name="product_type">
+
+      <label>預估預算</label>
+      <input type="text" name="budget">
+
+      <label>件數</label>
+      <input type="number" name="quantity">
+
+      <label>是否已準備好圖稿</label>
+      <select name="has_file">
+        <option value="是">是</option>
+        <option value="否">否</option>
+        <option value="其他">其他</option>
+      </select>
+
+      <label>備註或特殊需求</label>
+      <textarea name="notes" rows="4"></textarea>
 
       <label>圖稿上傳（可選）</label>
       <input type="file" id="uploadFile" accept="image/*,application/pdf">
