@@ -34,17 +34,23 @@ document.addEventListener("DOMContentLoaded", function () {
     formData.append(key, data[key]);
   }
 
-  console.log("🟢 正在發送 FormData 至 Apps Script...");
+  console.log("🟢 正在發送 JSON 至 Proxy API...");
 
-  fetch("https://script.google.com/macros/s/AKfycbx-7cBRkusyT0y0X4fpZ2QxJCFAcdTjxZZf5XODmPYxQdHXIN6JtsrW5hDjlA81UD6YzQ/exec", {
-    method: "POST",
-    mode: "no-cors", // 必須啟用，避免 CORS
-    body: formData
-  });
-
-  console.log("✅ 表單已送出（no-cors 無法顯示回應）");
+fetch("https://arzs-form-proxy.vercel.app/api/submit", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+.then(() => {
+  console.log("✅ 表單已送出");
   form.reset();
   successMsg.style.display = "block";
-}
-  });
+})
+.catch((err) => {
+  console.error("❌ 發送錯誤：", err);
+  alert("❌ 表單送出失敗，請稍後再試");
+});
+
 });
