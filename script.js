@@ -29,18 +29,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function sendForm(data) {
-      console.log("🟢 正在發送 POST 資料至 Apps Script：", data);
-      fetch("https://script.google.com/macros/s/AKfycbx-7cBRkusyT0y0X4fpZ2QxJCFAcdTjxZZf5XODmPYxQdHXIN6JtsrW5hDjlA81UD6YzQ/exec", {
-        method: "POST",
-        mode: "no-cors",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(data)
-      });
-      console.log("✅ POST 已送出（no-cors 無回應）");
-      form.reset();
-      successMsg.style.display = "block";
-    }
+  const formData = new FormData();
+  for (let key in data) {
+    formData.append(key, data[key]);
+  }
+
+  console.log("🟢 正在發送 FormData 至 Apps Script...");
+
+  fetch("https://script.google.com/macros/s/你的WebApp ID/exec", {
+    method: "POST",
+    mode: "no-cors", // 必須啟用，避免 CORS
+    body: formData
+  });
+
+  console.log("✅ 表單已送出（no-cors 無法顯示回應）");
+  form.reset();
+  successMsg.style.display = "block";
+}
   });
 });
