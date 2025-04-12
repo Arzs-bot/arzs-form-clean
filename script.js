@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   console.log("🟢 正在發送 FormData 至 Apps Script...");
 
-  fetch("https://script.google.com/macros/s/你的WebApp ID/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbx-7cBRkusyT0y0X4fpZ2QxJCFAcdTjxZZf5XODmPYxQdHXIN6JtsrW5hDjlA81UD6YzQ/exec", {
     method: "POST",
     mode: "no-cors", // 必須啟用，避免 CORS
     body: formData
